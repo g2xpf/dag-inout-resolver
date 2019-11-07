@@ -1,8 +1,4 @@
-use non_cyclic_graph_solver::{
-    dep, nodes,
-    solver::Solver,
-    types::{Dep, Graph, Node, Nodes},
-};
+use non_cyclic_graph_solver::*;
 
 fn main() {
     let input = nodes!(a);

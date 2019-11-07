@@ -1,3 +1,6 @@
-pub mod solver;
+mod solver;
 #[macro_use]
-pub mod types;
+mod types;
+
+pub use solver::Solver;
+pub use types::{Dep, Graph, Node, Nodes};

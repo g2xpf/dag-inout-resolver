@@ -1,8 +1,4 @@
-use non_cyclic_graph_solver::{
-    dep, nodes,
-    solver::Solver,
-    types::{Dep, Graph, Node, Nodes},
-};
+use non_cyclic_graph_solver::*;
 
 #[test]
 fn simple_graph() {
@@ -10,12 +6,12 @@ fn simple_graph() {
     let output = nodes!(m, n, o);
     let dep = dep!(
     f <- a, b;
-    g <- f;
-    h <- c, g;
+    g <- f, h;
+    h <- c;
     i <- d;
     j <- e, i, h;
     l <- f, g;
-    k <- g, h, j;
+    k <- g, j;
     m <- f;
     n <- l;
     o <- k;
@@ -24,5 +20,5 @@ fn simple_graph() {
     let solver = Solver::new(graph);
     let result = solver.solve();
 
-    println!("{:?}", result);
+    println!("{:#?}", result);
 }

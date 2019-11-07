@@ -1,6 +1,7 @@
 // dotファイルはdigraphまたはgraphで始めます
 // graph_nameはこの例でのグラフ名です。
 digraph simple_graph {
+  node [fontsize=20];
   layout=neato;
   a [pos="-2, 3!"];
   b [pos="-1, 3!"];
@@ -19,11 +20,10 @@ digraph simple_graph {
   f -> g;
   f -> l;
   f -> m;
-  g -> h;
+  h -> g;
   g -> l;
   g -> k;
   h -> j;
-  h -> k;
   i -> j;
   j -> k;
   l -> n;

@@ -1,8 +1,15 @@
 use std::collections::HashMap;
 use std::collections::HashSet;
+use std::fmt;
 
-#[derive(PartialEq, Hash, Eq, Clone, Copy, Debug)]
+#[derive(PartialEq, Hash, Eq, Clone, Copy)]
 pub struct Node(pub &'static str);
+impl fmt::Debug for Node {
+    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
+        write!(formatter, "{}", self.0)
+    }
+}
+
 pub type Nodes = HashSet<Node>;
 pub type Input = Nodes;
 pub type Output = Nodes;
